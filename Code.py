@@ -1,4 +1,4 @@
-mode = input("덧셈 or 곱셈 중 선택하세요 (덧셈/곱셈): ")
+mode = input("덧셈 or 곱셈 중 선택하세요 (덧셈/곱셈/뺄셈): ")
 
 inputs = input("a, b중 하나 이상 입력 (공백 구분): "). split(' ')
 a = inputs[0] if len(inputs) > 0 else ''
@@ -21,6 +21,12 @@ def Addition(a, b):
     a = int(a)
     b = int(b)
     print(f'{a} + {b} = {a+b}')
+    
+def subtract(a, b):
+    a = int(a)
+    b = int(b)
+    print(f'{a} - {b} = {a-b}')
+
 if mode == '곱셈':
     if a != '' and b == '':
         SingleMultiPlication(a)
@@ -36,5 +42,8 @@ elif mode == '덧셈':
         Addition(a, b)
     else:
         print("2개의 숫자가 필요합니다.")
+elif mode == '뺄셈':
+    if a != '' and b != '':
+        subtract(a, b)
 elif mode != '곱셈' or '덧셈':
     print("다시 입력해주세요.")
